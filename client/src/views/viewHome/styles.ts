@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   font-family: ${themes.fontFamily.inter};
   justify-content: center;
-  align-items: center;
   flex-grow: 1;
   flex-direction: row;
 `;
@@ -15,6 +14,7 @@ export const Container = styled.div`
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin-bottom: 50px;
 `;
 
@@ -29,7 +29,7 @@ export const Image = styled.div`
 
 export const IconEcoMiles = styled.img`
   display: flex;
-  width: 30%;
+  width: 40%;
 `;
 
 export const Buttons = styled.div`
