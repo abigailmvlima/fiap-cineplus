@@ -12,7 +12,7 @@ const movieSchema = new mongoose.Schema(
       ref: "Category",
     },
     note: {
-      type: Number,
+      type: String,
     },
     duration: {
       type: String,

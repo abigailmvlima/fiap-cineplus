@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 import { TListMovie } from 'domains/types/TListMovie';
 import ItemMovie from 'components/itemMovie';

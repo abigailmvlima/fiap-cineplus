@@ -1,52 +1,71 @@
-import styled, { css } from 'styled-components';
-import themes from 'themes/index';
-
-const cssActive = css`
-  font-weight: 900;
-  font-size: 19px;
-  font-family: ${themes.fontFamily.koulen};
-  letter-spacing: 2.76px;
-  color: ${themes.colors.v8};
-
-  &:hover {
-    color: #a457ed;
-  }
-
-  &:active {
-    color: #64368e;
-  }
-`;
-
-const cssDesactive = css`
-  font-weight: 100;
-  letter-spacing: 2.76px;
-  font-family: ${themes.fontFamily.koulen};
-  font-size: 19px;
-  color: #272727;
-
-  &:hover {
-    color: #a457ed;
-  }
-
-  &:active {
-    color: #64368e;
-  }
-`;
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  margin: 8px 0;
+  background-color: #2F5E96;
+
+`;
+export const Photo = styled.img`
+  display: flex;
+  width: 100%;
 `;
 
-interface IButton {
-  active: boolean;
-}
-
-export const Button = styled.div<IButton>`
+export const Image = styled.div`
+  margin: 5px;
   display: flex;
-  cursor: pointer;
-  margin: 8px 30px;
-  text-transform: uppercase;
-  ${(p: IButton) => (p.active == true ? cssActive : cssDesactive)};
-  color: #565656;
-  font-family: ${themes.fontFamily.koulen};
+  height: 250px;
+  background-color: aliceblue;
+`;
+
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
+
+export const Title = styled.div`
+  display: flex;
+  font-size: 36px;
+  color: aliceblue;
+  margin: 10px 10px 0px 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+`;
+
+export const RowBase = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-right: 5px;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+`;
+
+export const Col = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+`;
+
+export const Text1 = styled.div`
+  display: flex;
+  font-size: 23px;
+  color: aliceblue;
+  margin: 5px 10px 0px 10px;
+  letter-spacing: 1px;
+`;
+
+export const Text2 = styled.div`
+  display: flex;
+  font-size: 23px;
+  font-weight: bold;
+  color: #F9A300;
+  margin: 5px 10px 0px 10px;
+  letter-spacing: 1px;
 `;

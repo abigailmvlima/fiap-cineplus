@@ -1,6 +1,9 @@
 export type TListMovie = {
   title: string;
-  category: string;
+  category: {
+    title: string;
+    id: string;
+  },
   note: string;
   duration: string;
   sinopsis: string;
