@@ -31,7 +31,9 @@ const ViewHome = () => {
           />
         </S.Image>
         <S.BaseButtom>
-          <svg.PlusCircle width={40} />
+          <svg.PlusCircle width={40} onClick={() => {
+            navigate('/')
+          }} />
         </S.BaseButtom>
         <S.Row>
           <ListMovies data={list} />

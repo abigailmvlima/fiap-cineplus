@@ -23,13 +23,13 @@ export const Image = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   margin-top: 100px;
 `;
 
 export const IconEcoMiles = styled.img`
   display: flex;
-  width: 40%;
+  width: 50%;
 `;
 
 export const Buttons = styled.div`
@@ -86,8 +86,7 @@ export const ButtonRules = styled.div`
 export const BaseButtom = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 10%;
-  margin-bottom: 40px;
+  margin-bottom: 8px;
 `;
 
 export const TitleBase = styled.div`
