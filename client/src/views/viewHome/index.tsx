@@ -32,7 +32,7 @@ const ViewHome = () => {
         </S.Image>
         <S.BaseButtom>
           <svg.PlusCircle width={40} onClick={() => {
-            navigate('/')
+            navigate('/register')
           }} />
         </S.BaseButtom>
         <S.Row>

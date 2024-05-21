@@ -2,21 +2,38 @@ import axios from 'axios';
 import {
   ILoginData,
   ILoginResponse,
+  IRegisterResponse,
   IRegsiterUserData,
 } from 'domains/interfaces/api';
 import serviceMovies from 'services/serviceMovies';
 
 const API_BASE_URL = 'http://localhost:3526';
 
-export const register = async (data: IRegsiterUserData): Promise<void> => {
-  const response = await axios.post(`${API_BASE_URL}/register`, data, {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-
-  if (response.status !== 200) {
-    throw new Error('Registration failed');
+export const register = async (data: IRegsiterUserData): Promise<IRegisterResponse> => {
+  try {
+    
+    const response: any = await axios.post(`${API_BASE_URL}/auth/register`, { ...data, phone: "1199558555"}, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (response.status !== 200) {
+      return {
+        status: response.status,
+        message: '',
+      };
+    }
+    
+    return {
+      status: response.status,
+      message: response.data.message,
+    };
+  } catch (error: any) {
+    return {
+      status: 400,
+      message: error.message,
+    };
   }
 };
 

@@ -1,10 +1,16 @@
 export interface IRegsiterUserData {
+  name: string;
   mail: string;
   password: string;
 }
 
 export interface ILoginResponse {
   token: string;
+}
+
+export interface IRegisterResponse {
+  status: number;
+  message: string;
 }
 
 export interface ILoginData {

@@ -58,7 +58,7 @@ const ViewLogin = () => {
                 <ButtonGo
                   label={'Entrar'}
                   onClick={async () => {
-                    const data: ILogin = methods.getValues();
+                    const data: ILogin = await methods.getValues();
                     await serviceAuth.onLogin(data, navigate);
                   }}
                 />
@@ -67,7 +67,7 @@ const ViewLogin = () => {
             <S.Registers>
               <S.Or>ou</S.Or>
               <S.LinkLabel>
-                <LinkLabel label={'Cadastre-se'} />
+                <LinkLabel label={'Cadastre-se'} onClick={() => { navigate('/register') }} />
               </S.LinkLabel>
             </S.Registers>
           </S.Form>
