@@ -9,10 +9,9 @@ interface IContainerProps {
 export const Container = styled.div<IContainerProps>`
   display: flex;
   flex-direction: row;
-  background-color: #c48206;
-
+  background-color: ${({ type }) => (type === 3 ? '#FFFFFF' : '#c48206')};
+  color: ${({ type }) => (type === 3 ? '#375C87' : '#FFFFFF')};
   border: 2px solid #d69212;
-
   border-radius: 15px;
   height: 47px;
   justify-content: center;
@@ -43,5 +42,5 @@ export const Title = styled.div<ITitleProps>`
   flex-wrap: wrap;
   line-height: 35px;
 
-  color: #fff;
+  color: ${({ type }) => (type === 3 ? '#375C87' : '#FFFFFF')};
 `;
