@@ -20,6 +20,9 @@ const movieSchema = new mongoose.Schema(
     sinopsis: {
       type: String,
     },
+    image: {
+      type: String,
+    },
   },
   {
     toJSON: {
