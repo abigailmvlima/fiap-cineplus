@@ -43,6 +43,11 @@ const themes: TThemes = {
       bg: colors.v5,
       bgBorder: colors.v17,
     },
+    buttonCancel: {
+      color: colors.v16,
+      bg: colors.white,
+      bgBorder: colors.white,
+    },
     buttonLink: {
       color: colors.link,
       bg: colors.v4,
@@ -90,6 +95,11 @@ const themes: TThemes = {
       color: colors.white,
       bg: colors.v4,
       bgBorder: colors.v3,
+    },
+    buttonCancel: {
+      color: colors.v16,
+      bg: colors.white,
+      bgBorder: colors.white,
     },
     buttonLink: {
       color: colors.link,

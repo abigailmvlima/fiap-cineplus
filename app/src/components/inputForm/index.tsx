@@ -15,7 +15,7 @@ interface propState {
   theme: ETheme;
   name: string;
   type?: EInputType;
-  size: EInputSize;
+  size?: EInputSize;
   position: EInputPosition;
   placeholder?: string;
   messageErrorText?: string;
@@ -144,7 +144,7 @@ const InputForm = ({ type = EInputType.text, ...props }: propState) => {
   }
 
   return (
-    <St.Container themeSelected={theme}>
+    <St.Container themeSelected={theme} size={size}>
       <St.Content themeSelected={theme}>
         <Controller
           control={control}

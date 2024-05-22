@@ -9,6 +9,7 @@ export const Container = styled.View<ITheme>`
   flex-direction: column;
   padding-top: 0;
   margin-bottom: 8px;
+  width:${(p) => (p.size === EInputSize.regular ? "" :p.size === EInputSize.small ? "70px":"115px")}
 `;
 
 export const Content = styled.View<ITheme>`

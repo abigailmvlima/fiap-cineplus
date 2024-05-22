@@ -1,5 +1,4 @@
 import LogoCinePlus from './logoCinePlus.svg';
-
 import ArrowLeftDark from "./arrowLeftDark.svg";
 import IconCar from "./iconCar.svg";
 import IconClient from "./iconClient.svg";
@@ -16,7 +15,6 @@ import PlusCircle from "./plusCircle.svg";
 
 const data = {
   LogoCinePlus,
-
   IconSearch,
   IconHome,
   IconMenu,

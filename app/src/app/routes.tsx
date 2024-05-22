@@ -4,6 +4,8 @@ import show from "@show/index";
 import ViewChat from "@view/viewChat";
 import ViewHome from "@view/viewHome";
 import ViewLogin from "@view/viewLogin";
+import ViewRegister from "@view/viewRegister";
+import ViewRegisterMovie from "@view/viewRegisterMovie";
 import ViewMenu from "@view/viewMenu";
 import ViewReward from "@view/viewReward";
 
@@ -15,6 +17,8 @@ const Routes = () => {
       <Route path={show.route.reward} component={ViewReward} />
       <Route path={show.route.chat} component={ViewChat} />
       <Route path={show.route.login} component={ViewLogin} />
+      <Route path={show.route.register} component={ViewRegister} />
+      <Route path={show.route.registerMovie} component={ViewRegisterMovie} />
       <Route exact component={ViewLogin} />
     </Switch>
   );

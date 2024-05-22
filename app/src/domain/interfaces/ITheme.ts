@@ -4,6 +4,8 @@ import { ETheme } from "@domain/enum/ETheme";
 export interface ITheme {
   themeSelected: ETheme;
   typeModel?: EModelComponent;
+  type?:number;
+  size?:string;
 }
 
 export type TThemesColors = {
@@ -112,6 +114,7 @@ export type TThemes = {
     };
     inputForm: TThemesImputForm;
     buttonGo: TThemesButton;
+    buttonCancel: TThemesButton;
     buttonLink: TThemesButton;
     textDisplay: TTextDisplay;
     panelDisplay: TPanelDisplay;
@@ -128,6 +131,7 @@ export type TThemes = {
     };
     inputForm: TThemesImputForm;
     buttonGo: TThemesButton;
+    buttonCancel: TThemesButton;
     buttonLink: TThemesButton;
     textDisplay: TTextDisplay;
     panelDisplay: TPanelDisplay;

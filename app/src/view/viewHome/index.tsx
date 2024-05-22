@@ -46,7 +46,7 @@ const ViewHome = () => {
           
       </S.Content>
       <S.Footer>
-        <TouchableOpacity onPress={() => { route.register() }}>
+        <TouchableOpacity onPress={() => { route.registerMovies() }}>
         <svg.PlusCircle />
 
         </TouchableOpacity>

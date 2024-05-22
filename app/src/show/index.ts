@@ -4,6 +4,7 @@ export enum ERoute {
   menu = "/menu",
   reward = "/reward",
   register = "/register",  
+  registerMovie = "/registermovie",  
   chat = "/chat",
 }
 
