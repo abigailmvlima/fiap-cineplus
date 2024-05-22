@@ -12,12 +12,14 @@ const list = async (): Promise<IMovie[]> => {
     if (!token) {
       throw new Error('No token found');
     }
+
     const response: any = await axios.get(`${API_BASE_URL}/movie`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
       },
     });
+    
     const movies: IMovie[] = (response?.data as IMovie[]) || [];
     await setItem('movies', JSON.stringify(movies));
     return movies;

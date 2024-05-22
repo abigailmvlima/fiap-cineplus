@@ -21,8 +21,37 @@ export const Content = styled.View<ITheme>`
   background-color: ${(p) => themes[p.themeSelected].colors.v2};
 `;
 
+export const ListMovies = styled.View`
+  display: flex;
+  flex-grow: 1;
+`
+
+export const Buttons = styled.View`
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+
+`
+export const LogoCinePlus = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+`
+
+
+
 export const Footer = styled.View`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  height: 120px;
+  padding-top: 20px;
+  background-color: #1D426E;
 `;
 
 export const Header = styled.View`

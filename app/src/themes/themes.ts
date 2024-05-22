@@ -41,7 +41,7 @@ const themes: TThemes = {
     buttonGo: {
       color: colors.white,
       bg: colors.v5,
-      bgBorder: colors.v4,
+      bgBorder: colors.v17,
     },
     buttonLink: {
       color: colors.link,

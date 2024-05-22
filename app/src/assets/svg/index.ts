@@ -12,6 +12,7 @@ import Logo from "./logo.svg";
 import LogoGoogleSmall from "./logoGoogleSmall.svg";
 import LogoHorizontal from "./logoHorizontal.svg";
 import LogoLogin from "./logoLogin.svg";
+import PlusCircle from "./plusCircle.svg";
 
 const data = {
   LogoCinePlus,
@@ -28,6 +29,7 @@ const data = {
   LogoLogin,
   IconClose,
   IconSac,
+  PlusCircle
 };
 
 export default data;

@@ -21,9 +21,9 @@ const ViewLogin = () => {
 
   const methods = useForm({
     defaultValues: {
-      mail: "",
-      password: "",
-      rememberLogin: true,
+      mail: "elio.designer@hotmail.com",
+      password: "Ab@102030",
+      remember: true,
     },
   });
 
@@ -61,7 +61,7 @@ const ViewLogin = () => {
                 label={"Entrar"} 
                 onPress={async () => {
                   const data: ILogin = await methods.getValues();                
-                  await serviceAuth.onLogin(data, route.login);
+                  await serviceAuth.onLogin(data, route.home);
                 }}              
             />
           </S.ButtonGo>
@@ -71,8 +71,7 @@ const ViewLogin = () => {
               theme={theme}
               label={"Cadastre-se"}
               onPress={async () => {
-                const data: ILogin = await methods.getValues();                
-                await serviceAuth.onLogin(data, route.login);
+                
               }}              
             />
           </S.ButtomRegister>

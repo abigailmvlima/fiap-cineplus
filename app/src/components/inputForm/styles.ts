@@ -14,7 +14,7 @@ export const Container = styled.View<ITheme>`
 export const Content = styled.View<ITheme>`
   display: flex;
   flex-direction: column;
-  border-bottom-width: 3px;
+  border-bottom-width: 1px;
   border-bottom-color: ${(p) => themes[p.themeSelected].buttonGo.bgBorder};
   padding-top: 0;
 `;
@@ -67,11 +67,11 @@ export const Input = styled.TextInput.attrs<IInput>(props => ({
   placeholderTextColor: '#ffffff' // substitua pelo código da cor desejada
 }))<IInput>`
   flex-grow: 1;
-  font-size: ${(p) => (p.size === EInputSize.regular ? "25px" : "20px")};
+  font-size: ${(p) => (p.size === EInputSize.regular ? "17px" : "20px")};
   padding: 8px;
   border-radius: 6px;
   color: ${(p) => themes[p.themeSelected].inputForm.color};
-  font-weight: 900;
+  font-weight: 400;
   ${(p) => p.showIcons === true && inputShowIconsCSS};
   ${(p) =>
     p.position === EInputPosition.left

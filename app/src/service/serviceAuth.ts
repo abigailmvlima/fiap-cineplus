@@ -13,6 +13,7 @@ const isValidPassword = (password: string): boolean => {
 };
 
 const onLogin = async (credentials: ILogin, navigate: any) => {
+
   if (!isValidEmail(credentials.mail)) {
     console.error("Invalid email format");
     return;
@@ -27,11 +28,12 @@ const onLogin = async (credentials: ILogin, navigate: any) => {
     mail: credentials.mail,
     password: credentials.password,
   });
-  console.log(response);
+  
   if (!response) {
     return;
   }
-  navigate();
+
+  await navigate()
 };
 
 const onRegister = async (credentials: IRegister, navigate: any) => {
@@ -55,3 +57,7 @@ const onRegister = async (credentials: IRegister, navigate: any) => {
 };
 
 export default { onLogin, onRegister };
+function useNavigation(): { dispatch: any; } {
+  throw new Error('Function not implemented.');
+}
+

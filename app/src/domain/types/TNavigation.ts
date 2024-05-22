@@ -19,6 +19,7 @@ export type TNavigateRoute = {
   menu: INavigateRouteFunc;
   login: INavigateRouteFunc;
   reward: INavigateRouteFunc;
+  register: INavigateRouteFunc;
 };
 
 export type TNavigation = {
