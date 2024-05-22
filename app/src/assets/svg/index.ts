@@ -12,13 +12,11 @@ import Logo from "./logo.svg";
 import LogoGoogleSmall from "./logoGoogleSmall.svg";
 import LogoHorizontal from "./logoHorizontal.svg";
 import LogoLogin from "./logoLogin.svg";
-import Planeta from "./planeta.svg";
 
 const data = {
   LogoCinePlus,
 
   IconSearch,
-  Planeta,
   IconHome,
   IconMenu,
   IconClient,
