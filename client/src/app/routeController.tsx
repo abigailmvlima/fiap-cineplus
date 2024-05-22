@@ -5,6 +5,7 @@ import ViewRegister from '../views/viewRegister';
 import ViewRegisterMovie from '../views/viewRegisterMovie';
 import ViewHome from '../views/viewHome';
 import ViewNotFound from '../views/viewNotFound';
+import ViewMovieDetail from '../views/viewMovieDetail';
 
 const RouteController = () => {
   return (
@@ -14,6 +15,7 @@ const RouteController = () => {
         <Route path={`/register`} Component={ViewRegister} />
         <Route path={`/registerMovie`} Component={ViewRegisterMovie} />
         <Route path={`/`} Component={ViewLogin} />
+        <Route path={`/movieDetail`} Component={ViewMovieDetail} />
         <Route path="*" Component={ViewNotFound} />
       </Routes>
     </BrowserRouter>
