@@ -31,14 +31,14 @@ const ViewLogin = () => {
     <S.Container themeSelected={theme}>
       <S.Contents>
         <S.Header>
-          <svg.LogoLogin />
+          <svg.LogoCinePlus />
         </S.Header>
         <S.Form>
           <FormProvider {...methods}>
             <InputForm
               position={EInputPosition.center}
               theme={theme}
-              type={EInputType.cpf}
+              type={EInputType.mail}
               isLowerCase={true}
               name={"mail"}
               placeholder={""}

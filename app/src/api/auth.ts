@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import {
   ILoginData,
   ILoginResponse,
@@ -7,7 +6,7 @@ import {
   IRegsiterUserData,
 } from '@domain/interfaces/api';
 import serviceMovies from '@service/serviceMovies';
-
+import { setItem, getItem } from '@utils/storage';
 
 const API_BASE_URL = 'http://localhost:3526';
 
@@ -48,6 +47,7 @@ export const login = async (
   credentials: ILoginData,
 ): Promise<ILoginResponse | undefined> => {
   try {
+    
     const response = await axios.post(
       `${API_BASE_URL}/auth/login`,
       credentials,
@@ -62,8 +62,14 @@ export const login = async (
       throw new Error('Login failed');
     }
 
-    const data = response.data;
-    await localStorage.setItem('token', data.token);
+    const data: any = response.data;
+    const token = data?.token;
+    if (!token) {
+      console.log('Token already exists');
+      return undefined;
+    }
+
+    await setItem('token', response?.data?.token);
     await serviceMovies.onMovies();
     return data;
   } catch (error) {

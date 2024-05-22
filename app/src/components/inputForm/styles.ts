@@ -63,8 +63,9 @@ const inputPositionCenterCSS = css`
 
 const inputPositionRightCSS = css``;
 
-export const Input = styled.TextInput<IInput>`
-  display: flex;
+export const Input = styled.TextInput.attrs<IInput>(props => ({
+  placeholderTextColor: '#ffffff' // substitua pelo código da cor desejada
+}))<IInput>`
   flex-grow: 1;
   font-size: ${(p) => (p.size === EInputSize.regular ? "25px" : "20px")};
   padding: 8px;
@@ -76,10 +77,10 @@ export const Input = styled.TextInput<IInput>`
     p.position === EInputPosition.left
       ? inputPositionLeftCSS
       : p.position === EInputPosition.center
-        ? inputPositionCenterCSS
-        : p.position === EInputPosition.right
-          ? inputPositionRightCSS
-          : inputPositionLeftCSS};
+      ? inputPositionCenterCSS
+      : p.position === EInputPosition.right
+      ? inputPositionRightCSS
+      : inputPositionLeftCSS};
 `;
 
 export const ErrorText = styled.Text`

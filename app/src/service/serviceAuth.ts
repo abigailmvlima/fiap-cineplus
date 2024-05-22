@@ -27,6 +27,7 @@ const onLogin = async (credentials: ILogin, navigate: any) => {
     mail: credentials.mail,
     password: credentials.password,
   });
+  console.log(response);
   if (!response) {
     return;
   }
