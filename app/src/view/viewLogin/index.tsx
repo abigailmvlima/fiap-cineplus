@@ -29,7 +29,7 @@ const ViewLogin = () => {
     <S.Container themeSelected={theme}>
       <S.Contents>
         <S.Header>
-          <svg.LogoLogin />
+          <svg.LogoCinePlus />
         </S.Header>
         <S.Form>
           <FormProvider {...methods}>
