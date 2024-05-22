@@ -1,17 +1,17 @@
-import { useContext } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { useContext } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import * as S from "./styles";
+import * as S from './styles';
 
-import svg from "@assets/svg";
-import { ButtonGo } from "@components/buttonGo";
-import { InputForm } from "@components/inputForm";
-import { ContextNavigation } from "@context/contextNavigation";
-import { ContextTheme } from "@context/contextTheme";
-import { EInputPosition, EInputType } from "@domain/enum/EInput";
-import { IContextTheme } from "@domain/interfaces/IContextTheme";
-import { TNavigation } from "@domain/types/TNavigation";
-import { ETheme } from "@domain/enum/ETheme";
+import svg from '@assets/svg';
+import { ButtonGo } from '@components/buttonGo';
+import { InputForm } from '@components/inputForm';
+import { ContextNavigation } from '@context/contextNavigation';
+import { ContextTheme } from '@context/contextTheme';
+import { EInputPosition, EInputType } from '@domain/enum/EInput';
+import { IContextTheme } from '@domain/interfaces/IContextTheme';
+import { TNavigation } from '@domain/types/TNavigation';
+import { ETheme } from '@domain/enum/ETheme';
 
 const ViewRegister = () => {
   const { route } = useContext<TNavigation>(ContextNavigation);
@@ -19,9 +19,10 @@ const ViewRegister = () => {
 
   const methods = useForm({
     defaultValues: {
-      mail: "",
-      pass: "",
-      rememberLogin: true,
+      mail: '',
+      password: '',
+      passwordConf: '',
+      remember: true,
     },
   });
 
@@ -34,40 +35,36 @@ const ViewRegister = () => {
         <S.Form>
           <FormProvider {...methods}>
             <InputForm
-              position={EInputPosition.center}
               theme={theme}
               type={EInputType.mail}
               isLowerCase={true}
-              name={"mail"}
-              placeholder={""}
+              name={'mail'}
+              label={'Email'}
             />
-
             <InputForm
-              position={EInputPosition.center}
               theme={theme}
               type={EInputType.password}
               isLowerCase={true}
-              name={"password"}
-              placeholder={""}
+              name={'password'}
+              label={'Senha'}
             />
-                        <InputForm
-              position={EInputPosition.center}
+            <InputForm
               theme={theme}
               type={EInputType.password}
               isLowerCase={true}
-              name={"confirmPassword"}
-              placeholder={""}
+              name={'passwordConf'}
+              label={'Configmação de senha'}
             />
           </FormProvider>
         </S.Form>
         <S.Buttons>
           <S.ButtonGo>
-            <ButtonGo theme={theme} label={"Salvar"} onPress={route.home} />
+            <ButtonGo theme={theme} label={'Salvar'} onPress={route.home} />
           </S.ButtonGo>
           <S.ButtonGo>
             <ButtonGo
               theme={theme}
-              label={"Cancelar"}
+              label={'Cancelar'}
               onPress={route.login}
               type={2}
             />

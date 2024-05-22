@@ -71,7 +71,7 @@ const ViewLogin = () => {
               theme={theme}
               label={"Cadastre-se"}
               onPress={async () => {
-                
+                route.register()
               }}              
             />
           </S.ButtomRegister>
