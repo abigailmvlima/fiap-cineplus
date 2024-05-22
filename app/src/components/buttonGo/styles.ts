@@ -7,8 +7,8 @@ export const Container = styled.TouchableOpacity<ITheme>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: ${(p) => themes[p.themeSelected].buttonGo.bg};
-  border-color: ${(p) => themes[p.themeSelected].buttonGo.bgBorder};
+  background-color: ${(p) => (p.type ? themes[p.themeSelected].buttonCancel.bg : themes[p.themeSelected].buttonGo.bg)};
+  border-color: ${(p) => (p.type ? themes[p.themeSelected].buttonCancel.bgBorder : themes[p.themeSelected].buttonGo.bgBorder)};
   border-width: 1px;
   border-radius: 8px;
 `;
@@ -17,7 +17,7 @@ export const Title = styled.Text<ITheme>`
   display: flex;
   margin: 15px 20px;
   font-family: ${(p) => themes.fonts.Inter_600SemiBold};
-  color: ${(p) => themes[p.themeSelected].buttonGo.color};
+  color: ${(p) => (p.type ? themes[p.themeSelected].buttonCancel.color : themes[p.themeSelected].buttonGo.color)};
   letter-spacing: 2px;
   font-size: 20px;
 `;

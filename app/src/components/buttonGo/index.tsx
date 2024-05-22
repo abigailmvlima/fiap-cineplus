@@ -5,11 +5,12 @@ export interface IButtonGo {
   theme: ETheme;
   onPress?: () => void;
   label: string;
+  type?:number
 }
-const ButtonGo = ({ theme, onPress, label }: IButtonGo) => {
+const ButtonGo = ({ theme, onPress, label,type }: IButtonGo) => {
   return (
-    <S.Container themeSelected={theme} onPress={onPress && onPress}>
-      <S.Title themeSelected={theme}>{label}</S.Title>
+    <S.Container themeSelected={theme} onPress={onPress && onPress} type={type}>
+      <S.Title themeSelected={theme} type={type}>{label}</S.Title>
     </S.Container>
   );
 };
