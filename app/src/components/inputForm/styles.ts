@@ -9,7 +9,7 @@ export const Container = styled.View<ITheme>`
   flex-direction: column;
   padding-top: 0;
   margin-bottom: 8px;
-  width:${(p) => (p.size === EInputSize.regular ? "" :p.size === EInputSize.small ? "70px":"115px")}
+  width:${(p) => p.size ? `${p.size}%` : '100%' };
 `;
 
 export const Content = styled.View<ITheme>`
@@ -47,7 +47,7 @@ export const Icon = styled.View`
 
 interface IInput extends ITheme {
   showIcons?: boolean;
-  size: EInputSize;
+  size?: EInputSize;
   position: EInputPosition;
 }
 
@@ -69,7 +69,7 @@ export const Input = styled.TextInput.attrs<IInput>(props => ({
 }))<IInput>`
   flex-grow: 1;
   font-size: ${(p) => (p.size === EInputSize.regular ? "17px" : "20px")};
-  padding: 8px;
+  padding: 8px 0;
   border-radius: 6px;
   color: ${(p) => themes[p.themeSelected].inputForm.color};
   font-weight: 400;
@@ -101,6 +101,9 @@ export const LabelBase = styled.View`
 
 export const Label = styled.Text`
   display: flex;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
 `;
 
 export const InputBase = styled.Text`

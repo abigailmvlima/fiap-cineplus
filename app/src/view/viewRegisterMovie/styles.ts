@@ -32,14 +32,11 @@ export const Header = styled.View`
 
 export const AddButton = styled.View`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 15px;
-  background-color:rgba(255, 255, 255, 0.5);;
-  width: 90%;
-  height: 120px;
-  
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 `;
+
 export const Buttons = styled.View`
   display: flex;
   flex-direction: column;
@@ -67,11 +64,11 @@ export const ButtomRegister = styled.View`
 export const Row = styled.View`
   display: flex;
   flex-direction:row;
-  justify-content:space-around;
-  margin-top:10px;
+  justify-content:space-between;
+  margin-top:10px;  
 `;
 
 export const Form = styled.View`
   display: flex;
-  margin: 0 6%;
+  margin: 0 6%;  
 `;

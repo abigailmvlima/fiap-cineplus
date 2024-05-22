@@ -1,18 +1,19 @@
-import { useContext } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { useContext } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 
-import * as S from "./styles";
+import * as S from './styles';
 
-import svg from "@assets/svg";
-import { ButtonGo } from "@components/buttonGo";
-import { InputForm } from "@components/inputForm";
-import { ContextNavigation } from "@context/contextNavigation";
-import { ContextTheme } from "@context/contextTheme";
-import { EInputPosition, EInputType,EInputSize } from "@domain/enum/EInput";
+import svg from '@assets/svg';
+import { ButtonGo } from '@components/buttonGo';
+import { InputForm } from '@components/inputForm';
+import { ContextNavigation } from '@context/contextNavigation';
+import { ContextTheme } from '@context/contextTheme';
+import { EInputPosition, EInputType, EInputSize } from '@domain/enum/EInput';
 
-import { IContextTheme } from "@domain/interfaces/IContextTheme";
-import { TNavigation } from "@domain/types/TNavigation";
-import { ETheme } from "@domain/enum/ETheme";
+import { IContextTheme } from '@domain/interfaces/IContextTheme';
+import { TNavigation } from '@domain/types/TNavigation';
+import { ETheme } from '@domain/enum/ETheme';
+import ButtonAddImage from '@components/buttonAddImage';
 
 const ViewRegister = () => {
   const { route } = useContext<TNavigation>(ContextNavigation);
@@ -20,75 +21,77 @@ const ViewRegister = () => {
 
   const methods = useForm({
     defaultValues: {
-      mail: "",
-      pass: "",
-      rememberLogin: true,
+      name: '',
+      category: '',
+      note: '',
+      duration: '',
+      sinopsis: '',
     },
   });
 
   return (
     <S.Container themeSelected={theme}>
       <S.Contents>
-        <S.AddButton>
-          <svg.PlusCircle />
-        </S.AddButton>
-        <S.Form>
-          <FormProvider {...methods}>
+        <FormProvider {...methods}>
+          <S.Form>
+            <S.AddButton>
+              <ButtonAddImage label={'Adicionar imagem'} />
+            </S.AddButton>
             <InputForm
-              position={EInputPosition.center}
+              position={EInputPosition.left}
               theme={theme}
-              type={EInputType.text}
               isLowerCase={true}
-              name={"Título"}
-              placeholder={""}
+              label={'Título'}
+              name={'name'}
+              placeholder={''}
             />
             <S.Row>
-            <InputForm
-              position={EInputPosition.center}
-              theme={theme}
-              size={EInputSize.big}
-              type={EInputType.text}
-              isLowerCase={true}
-              name={"Categoria"}
-              placeholder={""}
-            />
-            <InputForm
-              position={EInputPosition.center}
-              theme={theme}
-              size={EInputSize.small}
-              type={EInputType.text}
-              isLowerCase={true}
-              name={"Nota"}
-              placeholder={""}
-            />
-            <InputForm
-              position={EInputPosition.center}
-              theme={theme}
-              size={EInputSize.big}
-              type={EInputType.text}
-              isLowerCase={true}
-              name={"Duração"}
-              placeholder={""}
-            />
-            </S.Row>
               <InputForm
-              position={EInputPosition.center}
+                position={EInputPosition.left}
+                theme={theme}
+                size={32}
+                isLowerCase={true}
+                label={'Categoria'}
+                name={'category'}
+                placeholder={''}
+              />
+              <InputForm
+                position={EInputPosition.left}
+                theme={theme}
+                size={32}
+                isLowerCase={true}
+                label={'Nota'}
+                name={'note'}
+                placeholder={''}
+              />
+              <InputForm
+                position={EInputPosition.left}
+                theme={theme}
+                size={32}
+                isLowerCase={true}
+                label={'Duracão'}
+                name={'duration'}
+                placeholder={''}
+              />
+            </S.Row>
+            <InputForm
+              position={EInputPosition.left}
               theme={theme}
-              type={EInputType.text}
               isLowerCase={false}
-              name={"Sinopse"}
-              placeholder={""}
+              label={'Sinopse'}
+              name={'sinopsis'}
+              placeholder={''}
             />
-          </FormProvider>
-        </S.Form>
+          </S.Form>
+        </FormProvider>
         <S.Buttons>
           <S.ButtonGo>
-            <ButtonGo theme={theme} label={"Salvar"} onPress={route.home} />
+            <ButtonGo theme={theme} label={'Salvar'} onPress={route.home} />
           </S.ButtonGo>
           <S.ButtonGo>
             <ButtonGo
               theme={theme}
-              label={"Cancelar"}
+              label={'Cancelar'}
               onPress={route.login}
               type={2}
             />
