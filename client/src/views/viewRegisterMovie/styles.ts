@@ -1,4 +1,3 @@
-import svg from 'assets/svg';
 import styled from 'styled-components';
 import themes from 'themes/index';
 
@@ -8,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   font-family: ${themes.fontFamily.inter};
   justify-content: center;
-  align-items: center;
   flex-grow: 1;
   flex-direction: row;
   background-color: #01234B;
@@ -16,7 +14,7 @@ export const Container = styled.div`
 
 export const Body = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 export const Icon = styled.div`
@@ -47,16 +45,30 @@ export const Image = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 `;
+
+export const IconLogo = styled.img`
+  display: flex;
+  width: 55%;
+`;
+
 
 export const IconEcoMiles = styled.img`
   display: flex;
   width: 80%;
+  margin-top: 20px;
+`;
+
+export const Base = styled.div`
+  display: flex;
+  margin-top: 25px;
+  flex-direction: column;
 `;
 
 export const Input = styled.div`
   display: flex;
-  margin-top: 15px;
+  padding-top: 15px;
 `;
 
 export const InputSmall = styled.div`
@@ -69,6 +81,8 @@ export const InputRow = styled.div`
   display: flex;
   flex-direction:row;
   margin:5px 0px;
+  padding-top: 15px;
+  
 `;
 
 export const Forgot = styled.div`
@@ -80,12 +94,13 @@ export const Forgot = styled.div`
 export const Buttons = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 20px;;
 `;
 
 export const Button = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 4px 0;
+  margin: 10px 0;
 `;
 
 export const Registers = styled.div`

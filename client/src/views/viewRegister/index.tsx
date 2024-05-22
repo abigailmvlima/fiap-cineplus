@@ -8,14 +8,16 @@ import { FormProvider, useForm } from 'react-hook-form';
 import * as S from './styles';
 
 import serviceAuth from 'services/serviceAuth';
-import { ILogin } from 'domains/interfaces/login';
+import { IRegister } from 'domains/interfaces/register';
 
 const ViewRegister = () => {
   const navigate = useNavigate();
   const methods = useForm({
     defaultValues: {
-      mail: '',
-      password: '',
+      name: 'Kaique Bernardo',
+      mail: 'kaiue@hotmail.com',
+      password: 'Ab@102030',
+      passwordConf: 'Ab@102030',
       remember: true,
     },
   });
@@ -32,22 +34,32 @@ const ViewRegister = () => {
           <S.Form>
             <S.Input>
               <InputDefault
-                label={'email'}
+                label={'Nome'}
                 position={EInputPosition.right}
-                type={EInputType.mail}
+                type={EInputType.text}
                 isLowerCase={true}
-                name={'email'}
+                name={'name'}
                 placeholder={''}
               />
             </S.Input>
             <S.Input>
               <InputDefault
-                label={'senha'}
+                label={'Email'}
+                position={EInputPosition.right}
+                type={EInputType.mail}
+                isLowerCase={true}
+                name={'mail'}
+                placeholder={''}
+              />
+            </S.Input>
+            <S.Input>
+              <InputDefault
+                label={'Senha'}
                 position={EInputPosition.right}
                 type={EInputType.password}
                 isLowerCase={true}
                 name={'password'}
-                placeholder={'************'}
+                placeholder={''}
               />
             </S.Input>
             <S.Input>
@@ -56,8 +68,8 @@ const ViewRegister = () => {
                 position={EInputPosition.right}
                 type={EInputType.password}
                 isLowerCase={true}
-                name={'password'}
-                placeholder={'************'}
+                name={'passwordConf'}
+                placeholder={''}
               />
             </S.Input>
             <S.Buttons>
@@ -65,16 +77,16 @@ const ViewRegister = () => {
                 <ButtonGo
                   label={'Salvar'}
                   onClick={async () => {
-                    const data: ILogin = methods.getValues();
-                    await serviceAuth.onLogin(data, navigate);
+                    const data: IRegister = await methods.getValues();
+                    await serviceAuth.onRegister(data, navigate);
                   }}
                 />
               </S.Button>
             </S.Buttons>
             <S.Registers>
-            <S.Button>
+              <S.Button>
                 <ButtonGo type={3} label={'Cancelar'} />
-                </S.Button>
+              </S.Button>
             </S.Registers>
           </S.Form>
         </FormProvider>

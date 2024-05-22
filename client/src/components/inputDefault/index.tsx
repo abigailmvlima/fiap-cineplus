@@ -136,7 +136,7 @@ const InputDefault = ({ type = EInputType.text, ...props }: propState) => {
       return dataValue;
     }
   };
-
+  
   return (
     <S.Container>
       <S.Label>
@@ -159,6 +159,7 @@ const InputDefault = ({ type = EInputType.text, ...props }: propState) => {
                 autoCapitalize={'sentences'}
                 maxLength={EMaxLength[EInputType.name]}
                 value={value}
+                autoComplete="new-password" 
                 onChange={(event: any) => {
                   const dataValue = onChangeValue(event.target.value);
                   onChange(dataValue);

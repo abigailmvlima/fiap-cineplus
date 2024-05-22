@@ -27,7 +27,7 @@ export const Image = styled.div`
   margin-top: 100px;
 `;
 
-export const IconEcoMiles = styled.img`
+export const IconLogo = styled.img`
   display: flex;
   width: 50%;
 `;
@@ -43,9 +43,8 @@ export const Buttons = styled.div`
 export const Button = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 4px 1px;
   width: 40%;
-  margin: 0 3%;
+  margin: 20px;
 `;
 
 export const ButtonTitle = styled.div`
@@ -113,4 +112,13 @@ export const Title = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const Registers = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+
 `;
