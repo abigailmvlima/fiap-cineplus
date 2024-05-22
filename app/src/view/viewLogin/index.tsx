@@ -12,6 +12,8 @@ import { ContextTheme } from "@context/contextTheme";
 import { EInputPosition, EInputType } from "@domain/enum/EInput";
 import { IContextTheme } from "@domain/interfaces/IContextTheme";
 import { TNavigation } from "@domain/types/TNavigation";
+import { ILogin } from "@domain/interfaces/login";
+import serviceAuth from "@service/serviceAuth";
 
 const ViewLogin = () => {
   const { route } = useContext<TNavigation>(ContextNavigation);
@@ -20,7 +22,7 @@ const ViewLogin = () => {
   const methods = useForm({
     defaultValues: {
       mail: "",
-      pass: "",
+      password: "",
       rememberLogin: true,
     },
   });
@@ -39,7 +41,7 @@ const ViewLogin = () => {
               type={EInputType.cpf}
               isLowerCase={true}
               name={"mail"}
-              placeholder={"000.000.000-00"}
+              placeholder={""}
             />
 
             <InputForm
@@ -48,20 +50,30 @@ const ViewLogin = () => {
               type={EInputType.password}
               isLowerCase={true}
               name={"password"}
-              placeholder={"************"}
+              placeholder={""}
             />
           </FormProvider>
         </S.Form>
         <S.Buttons>
           <S.ButtonGo>
-            <ButtonGo theme={theme} label={"Entrar"} onPress={route.home} />
+            <ButtonGo 
+                theme={theme} 
+                label={"Entrar"} 
+                onPress={async () => {
+                  const data: ILogin = await methods.getValues();                
+                  await serviceAuth.onLogin(data, route.login);
+                }}              
+            />
           </S.ButtonGo>
           <S.TextOr themeSelected={theme}>ou</S.TextOr>
           <S.ButtomRegister>
             <ButtonLink
               theme={theme}
               label={"Cadastre-se"}
-              onPress={route.login}
+              onPress={async () => {
+                const data: ILogin = await methods.getValues();                
+                await serviceAuth.onLogin(data, route.login);
+              }}              
             />
           </S.ButtomRegister>
         </S.Buttons>
