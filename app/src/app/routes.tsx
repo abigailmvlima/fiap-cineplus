@@ -15,8 +15,8 @@ const Routes = () => {
       <Route path={show.route.menu} component={ViewMenu} />
       <Route path={show.route.reward} component={ViewReward} />
       <Route path={show.route.chat} component={ViewChat} />
-      <Route path={show.route.login} component={ViewRegister} />
-      <Route exact component={ViewRegister} />
+      <Route path={show.route.login} component={ViewLogin} />
+      <Route exact component={ViewLogin} />
     </Switch>
   );
 };
