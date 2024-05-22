@@ -5,6 +5,7 @@ export interface ITheme {
   themeSelected: ETheme;
   typeModel?: EModelComponent;
   type?:number;
+  size?:string;
 }
 
 export type TThemesColors = {
