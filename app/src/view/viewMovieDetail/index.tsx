@@ -1,53 +1,54 @@
-import { useContext } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { useContext } from 'react';
+import { useSelector } from 'react-redux';
+import { Image } from 'react-native';
 
-import * as S from "./styles";
+import * as S from './styles';
 
-import svg from "@assets/svg";
-import { ButtonGo } from "@components/buttonGo";
-import { ButtonLink } from "@components/buttonLink";
-import { InputForm } from "@components/inputForm";
-import { ContextNavigation } from "@context/contextNavigation";
-import { ContextTheme } from "@context/contextTheme";
-import { EInputPosition, EInputType } from "@domain/enum/EInput";
-import { IContextTheme } from "@domain/interfaces/IContextTheme";
-import { TNavigation } from "@domain/types/TNavigation";
-import { ILogin } from "@domain/interfaces/login";
-import serviceAuth from "@service/serviceAuth";
+import svg from '@assets/svg';
+import { ContextNavigation } from '@context/contextNavigation';
+import { ContextTheme } from '@context/contextTheme';
+import { IContextTheme } from '@domain/interfaces/IContextTheme';
+import { TNavigation } from '@domain/types/TNavigation';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const ViewMovieDetail = () => {
   const { route } = useContext<TNavigation>(ContextNavigation);
   const { theme } = useContext<IContextTheme>(ContextTheme);
+  const data = useSelector((state: any) => state.history.data);
 
-  const methods = useForm({
-    defaultValues: {
-      mail: "elio.designer@hotmail.com",
-      password: "Ab@102030",
-      remember: true,
-    },
-  });
+  const onPressBack = () => {
+    route.home();
+  }
 
   return (
     <S.Container themeSelected={theme}>
       <S.Contents>
         <S.Header>
-          <svg.ArrowBack/>
-        <S.TextCategory>Back</S.TextCategory>
+          <TouchableOpacity onPress={onPressBack}>
+            <S.Buttons>
+              <svg.ArrowBack />
+              <S.TextCategory>Back</S.TextCategory>
+            </S.Buttons>
+          </TouchableOpacity>
         </S.Header>
-
-          <svg.Sonic />
-        <S.TextTitle>Sonic</S.TextTitle>
+        <S.ImageContainer>
+          <Image
+            style={{ width: '100%', height: '100%' }}
+            source={{ uri: data?.image }}
+            resizeMode="cover"
+          />
+        </S.ImageContainer>
+        <S.TextTitle>{data?.title}</S.TextTitle>
         <S.Row>
-        <S.TextCategory>Infantil</S.TextCategory>
-        <S.TextCategory>1h39min</S.TextCategory>
+          <S.TextCategory>{data?.category?.title}</S.TextCategory>
+          <S.TextCategory>{data?.duration}</S.TextCategory>
         </S.Row>
         <S.InnerRow>
-        <svg.Star />
-        <S.TextStar>10/10</S.TextStar>
+          <svg.Star />
+          <S.TextStar>{data?.note}</S.TextStar>
         </S.InnerRow>
         <S.TextCategory>Sinopse</S.TextCategory>
-        <S.TextSinopsis>{"Nessa comédia de aventura live-action, Sonic e seu novo melhor amigo Tom (James Marsden) precisam se unir para defender o planeta do gênio maligno Dr. Robotnik (Jim Carrey) e seus planos de dominação total"}</S.TextSinopsis>
-
+        <S.TextSinopsis>{data?.sinopsis}</S.TextSinopsis>
       </S.Contents>
     </S.Container>
   );

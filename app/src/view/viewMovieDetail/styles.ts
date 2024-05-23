@@ -24,13 +24,13 @@ export const Header = styled.View`
   justify-content: left;
   align-items:center;
   flex-direction:row;
-  margin: 15px 0;
+  margin-top: 15px;
 `;
 
 export const Buttons = styled.View`
   display: flex;
-  flex-direction: column;
-  margin: 5px 5%;
+  flex-direction: row;
+  margin: 5px 0;
   align-items: center;
 `;
 
@@ -50,9 +50,10 @@ export const TextSinopsis = styled.Text`
 
 export const TextTitle = styled.Text`
   display: flex;
-  margin: 10px;
-  font-size: 45px;
+  font-size: 35px;
   color: #FFFF;
+  margin-top: 15px;
+  margin-bottom: 20px;
 `;
 
 
@@ -87,4 +88,12 @@ export const InnerRow = styled.View`
 export const Form = styled.View`
   display: flex;
   margin: 0 6%;
+`;
+
+export const ImageContainer = styled.View`
+  margin: 5px;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: aliceblue;
 `;
