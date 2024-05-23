@@ -1,4 +1,5 @@
 import LogoCinePlus from './logoCinePlus.svg';
+import Sonic from './sonic.svg';
 import ArrowLeftDark from "./arrowLeftDark.svg";
 import IconCar from "./iconCar.svg";
 import IconClient from "./iconClient.svg";
@@ -12,6 +13,8 @@ import LogoGoogleSmall from "./logoGoogleSmall.svg";
 import LogoHorizontal from "./logoHorizontal.svg";
 import LogoLogin from "./logoLogin.svg";
 import PlusCircle from "./plusCircle.svg";
+import Star from "./starMedia.svg";
+import ArrowBack from "./arrowBack.svg"
 
 const data = {
   LogoCinePlus,
@@ -27,7 +30,10 @@ const data = {
   LogoLogin,
   IconClose,
   IconSac,
-  PlusCircle
+  PlusCircle,
+  Sonic,
+  Star,
+  ArrowBack
 };
 
 export default data;

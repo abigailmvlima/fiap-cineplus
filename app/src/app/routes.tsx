@@ -8,6 +8,7 @@ import ViewRegister from "@view/viewRegister";
 import ViewRegisterMovie from "@view/viewRegisterMovie";
 import ViewMenu from "@view/viewMenu";
 import ViewReward from "@view/viewReward";
+import ViewMovieDetail from "@view/viewMovieDetail";
 
 const Routes = () => {
   return (
@@ -16,10 +17,10 @@ const Routes = () => {
       <Route path={show.route.menu} component={ViewMenu} />
       <Route path={show.route.reward} component={ViewReward} />
       <Route path={show.route.chat} component={ViewChat} />
-      <Route path={show.route.login} component={ViewLogin} />
+      <Route path={show.route.login} component={ViewMovieDetail} />
       <Route path={show.route.register} component={ViewRegister} />
       <Route path={show.route.registerMovie} component={ViewRegisterMovie} />
-      <Route exact component={ViewLogin} />
+      <Route exact component={ViewMovieDetail} />
     </Switch>
   );
 };
