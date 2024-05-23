@@ -17,10 +17,10 @@ const Routes = () => {
       <Route path={show.route.menu} component={ViewMenu} />
       <Route path={show.route.reward} component={ViewReward} />
       <Route path={show.route.chat} component={ViewChat} />
-      <Route path={show.route.login} component={ViewMovieDetail} />
+      <Route path={show.route.login} component={ViewLogin} />
       <Route path={show.route.register} component={ViewRegister} />
       <Route path={show.route.registerMovie} component={ViewRegisterMovie} />
-      <Route exact component={ViewMovieDetail} />
+      <Route exact component={ViewLogin} />
     </Switch>
   );
 };
