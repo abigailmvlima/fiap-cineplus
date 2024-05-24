@@ -12,10 +12,10 @@ import { EInputPosition, EInputType, EInputSize } from '@domain/enum/EInput';
 
 import { IContextTheme } from '@domain/interfaces/IContextTheme';
 import { TNavigation } from '@domain/types/TNavigation';
-import { ETheme } from '@domain/enum/ETheme';
 import ButtonAddImage from '@components/buttonAddImage';
+import SelectComponent from '@components/selectForm';
 
-const ViewRegister = () => {
+const ViewMovieRegister = () => {
   const { route } = useContext<TNavigation>(ContextNavigation);
   const { theme } = useContext<IContextTheme>(ContextTheme);
 
@@ -46,15 +46,7 @@ const ViewRegister = () => {
               placeholder={''}
             />
             <S.Row>
-              <InputForm
-                position={EInputPosition.left}
-                theme={theme}
-                size={32}
-                isLowerCase={true}
-                label={'Categoria'}
-                name={'category'}
-                placeholder={''}
-              />
+              <SelectComponent label={'Categoria'} size={32} />              
               <InputForm
                 position={EInputPosition.left}
                 theme={theme}
@@ -102,4 +94,4 @@ const ViewRegister = () => {
   );
 };
 
-export default ViewRegister;
+export default ViewMovieRegister;
