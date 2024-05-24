@@ -12,6 +12,8 @@ import { EInputPosition, EInputType } from '@domain/enum/EInput';
 import { IContextTheme } from '@domain/interfaces/IContextTheme';
 import { TNavigation } from '@domain/types/TNavigation';
 import { ETheme } from '@domain/enum/ETheme';
+import serviceAuth from "@service/serviceAuth";
+import { IRegister } from "@domain/interfaces/register";
 
 const ViewRegister = () => {
   const { route } = useContext<TNavigation>(ContextNavigation);
@@ -19,6 +21,7 @@ const ViewRegister = () => {
 
   const methods = useForm({
     defaultValues: {
+      name:'',
       mail: '',
       password: '',
       passwordConf: '',
@@ -34,6 +37,13 @@ const ViewRegister = () => {
         </S.Header>
         <S.Form>
           <FormProvider {...methods}>
+          <InputForm
+              theme={theme}
+              type={EInputType.name}
+              isLowerCase={true}
+              name={'name'}
+              label={'Nome'}
+            />
             <InputForm
               theme={theme}
               type={EInputType.mail}
@@ -53,13 +63,18 @@ const ViewRegister = () => {
               type={EInputType.password}
               isLowerCase={true}
               name={'passwordConf'}
-              label={'Configmação de senha'}
+              label={'Confirmação de senha'}
             />
           </FormProvider>
         </S.Form>
         <S.Buttons>
           <S.ButtonGo>
-            <ButtonGo theme={theme} label={'Salvar'} onPress={route.home} />
+            <ButtonGo theme={theme} label={'Salvar'} 
+                            onPress={async () => {
+                              const data: IRegister = await methods.getValues();                
+                              await serviceAuth.onRegister(data, route.home);
+                            }}   
+            />
           </S.ButtonGo>
           <S.ButtonGo>
             <ButtonGo
