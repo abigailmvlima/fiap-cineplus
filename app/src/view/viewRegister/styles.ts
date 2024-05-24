@@ -26,7 +26,7 @@ export const Header = styled.View`
   margin: 0 15px;
   & > :nth-child(1) {
     width: 120px;
-    height: 120px;
+    height: 110px;
   }
 `;
 
@@ -41,7 +41,7 @@ export const ButtonGo = styled.View`
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 15px;
 `;
 
 export const TextOr = styled.Text<ITheme>`

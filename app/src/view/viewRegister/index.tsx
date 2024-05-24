@@ -63,7 +63,7 @@ const ViewRegister = () => {
               type={EInputType.password}
               isLowerCase={true}
               name={'passwordConf'}
-              label={'Configmação de senha'}
+              label={'Confirmação de senha'}
             />
           </FormProvider>
         </S.Form>
