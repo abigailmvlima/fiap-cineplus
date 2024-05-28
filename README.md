@@ -1,6 +1,6 @@
 # CinePlus react
 
-###**Visão Geral do Projeto CinePlus**
+### **Visão Geral do Projeto CinePlus**
 
 O CinePlus é uma plataforma abrangente de guia de filmes projetada para fornecer aos usuários uma experiência perfeita para gerenciar e explorar conteúdo de filmes. O projeto abrange uma pilha tecnológica completa e vários componentes para garantir uma solução eficiente, escalável e amigável.
 
